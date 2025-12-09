@@ -35,7 +35,7 @@
             <header class="app-header">
                 <div class="user-info">
                     <div class="avatar" style="display:flex; justify-content:center; align-items:center;">
-                        <span style="font-size: 1.5rem;">👨‍🌾</span>
+                        <span style="font-size: 1.5rem;">�</span> <!-- Bee for user -->
                     </div>
                     <div>
                         <div class="greeting">Chào buổi sáng,</div>
@@ -47,130 +47,144 @@
                 </div>
             </header>
 
-            <!-- Search Bar Added to Home -->
-            <div
-                style="background:var(--card-bg); padding:12px; border-radius:12px; display:flex; gap:10px; margin-bottom:1.5rem; align-items:center;">
-                <i class='bx bx-search' style="font-size:1.2rem; color:#888;"></i>
-                <input type="text" placeholder="Tìm kiếm nông sản..."
-                    style="background:transparent; border:none; outline:none; color:white; width:100%; font-size: 1rem;">
-                <i class='bx bx-scan' style="font-size:1.2rem; color:#888;"></i>
-            </div>
-
-            <div class="filter-tabs">
-                <div class="tab active">Bắc</div>
-                <div class="tab">Trung</div>
-                <div class="tab">Nam</div>
-                <div class="tab">Bán buôn</div>
-            </div>
-
-            <div class="price-grid">
-                <!-- Coffee Card -->
-                <div class="price-card" onclick="showProductDetail('coffee')">
-                    <div class="card-header">
-                        <span style="font-size: 1.5rem;">☕</span>
-                        <div class="card-title">Cà phê</div>
+            <div class="dashboard-container">
+                <!-- Farm Info Card -->
+                <div class="farm-card">
+                    <i class='bx bxs-pencil edit-btn'></i>
+                    <div class="farm-header">
+                        <div class="farm-icon">
+                            <span style="font-size: 1.5rem;">☕</span>
+                        </div>
+                        <div class="farm-info">
+                            <h3>Vườn Cà Phê</h3>
+                            <p><span style="color: #fff; font-weight:600;">1.5 hecta</span> • <a href="#"
+                                    style="color:#fbbf24;">Chi tiết đất</a></p>
+                        </div>
                     </div>
-                    <div class="price-value">120.000 đ/kg</div>
-                    <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +5%</div>
-                    <svg class="mini-chart" viewBox="0 0 100 40">
-                        <path d="M0 30 Q 20 10, 40 25 T 100 5" stroke="#34d399" fill="none" />
-                    </svg>
-                    <span class="location-tag">Giá sỉ, TPHCM</span>
+                    <div class="farm-location">
+                        <i class='bx bxs-map'></i>
+                        <span>Thảo điền, Quận 2, TPHCM</span>
+                    </div>
                 </div>
 
-                <!-- Pepper Card -->
-                <div class="price-card">
-                    <div class="card-header">
-                        <span style="font-size: 1.5rem;">🌶️</span>
-                        <div class="card-title">Hồ tiêu</div>
+                <!-- Visit Other Farms Row -->
+                <div class="farm-nav-row">
+                    <div class="farm-thumbs">
+                        <span style="font-size: 1.2rem;">🧇</span> <!-- Soil/Field icon placeholder -->
+                        <span style="font-size: 1.2rem;">🌱</span>
                     </div>
-                    <div class="price-value">95.000 đ/kg</div>
-                    <div class="price-trend trend-down"><i class='bx bx-trending-down'></i> -2%</div>
-                    <svg class="mini-chart" viewBox="0 0 100 40">
-                        <path d="M0 10 Q 30 5, 60 25 T 100 35" stroke="#f87171" fill="none" />
-                    </svg>
-                    <span class="location-tag">Giá sỉ, Đắk Lắk</span>
+                    <a href="#" class="farm-link">
+                        Thăm các vườn khác <i class='bx bx-right-arrow-alt'></i>
+                    </a>
                 </div>
 
-                <!-- Rice Card -->
-                <div class="price-card">
-                    <div class="card-header">
-                        <span style="font-size: 1.5rem;">🍚</span>
-                        <div class="card-title">Gạo ST25</div>
+                <!-- Weather & Field Visual -->
+                <div class="weather-field-row">
+                    <div class="weather-card">
+                        <div class="weather-main">
+                            <div>
+                                <div class="temp-text">30°C</div>
+                                <div style="font-size:0.9rem;">Nắng nhẹ</div>
+                            </div>
+                            <span style="font-size: 2rem;">�️</span>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-detail-row"><span>Gió:</span> <span>12km/h</span></div>
+                            <div class="weather-detail-row"><span>Độ ẩm:</span> <span>75%</span></div>
+                            <div class="weather-detail-row"><span>Mưa:</span> <span>20%</span></div>
+                        </div>
                     </div>
-                    <div class="price-value">35.000 đ/kg</div>
-                    <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +1%</div>
-                    <svg class="mini-chart" viewBox="0 0 100 40">
-                        <path d="M0 35 Q 20 30, 40 20 T 100 15" stroke="#34d399" fill="none" />
-                    </svg>
-                    <span class="location-tag">Giá sỉ, Sóc Trăng</span>
+                    <div class="field-visual-card">
+                        <!-- Using an Emoji composition to look like 3D field -->
+                        <div style="font-size: 4rem; line-height: 0.8; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">🌱
+                        </div>
+                        <div
+                            style="width: 60px; height: 30px; background: #3f2e26; border-radius: 5px; transform: perspective(100px) rotateX(40deg); margin-top: -10px;">
+                        </div>
+                        <div style="font-size:0.8rem; color:#888; margin-top: 10px;">05.08.2025</div>
+                    </div>
                 </div>
 
-                <!-- Durian Card -->
-                <div class="price-card">
-                    <div class="card-header">
-                        <span style="font-size: 1.5rem;">🍈</span>
-                        <div class="card-title">Sầu riêng</div>
+                <!-- Farming Diary -->
+                <div class="diary-card">
+                    <div class="diary-header">
+                        <i class='bx bxs-leaf'></i>
+                        <span>Nhật ký canh tác • <span style="color:#888; font-weight:400;">Đã trồng 5
+                                ngày</span></span>
                     </div>
-                    <div class="price-value">80.000 đ/kg</div>
-                    <div class="price-trend trend-down"><i class='bx bx-trending-down'></i> -4%</div>
-                    <svg class="mini-chart" viewBox="0 0 100 40">
-                        <path d="M0 10 Q 40 10, 70 30 T 100 38" stroke="#f87171" fill="none" />
-                    </svg>
-                    <span class="location-tag">Giá sỉ, Tiền Giang</span>
-                </div>
-                <!-- Repeated Cards for Scrolling Test -->
-                <div class="price-card">
-                    <div class="card-header">
-                        <span style="font-size: 1.5rem;">🌽</span>
-                        <div class="card-title">Ngô Lai</div>
+                    <div class="diary-prompt">
+                        <span style="font-size: 1.5rem; color: #60a5fa;">✨</span>
+                        <div class="diary-text">Viết nhật ký để Đom Đóm nhắc việc và đưa khuyến nghị canh tác cho bác
+                        </div>
                     </div>
-                    <div class="price-value">15.000 đ/kg</div>
-                    <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +2%</div>
-                    <svg class="mini-chart" viewBox="0 0 100 40">
-                        <path d="M0 20 Q 50 10, 100 25" stroke="#34d399" fill="none" />
-                    </svg>
-                    <span class="location-tag">Giá sỉ, Đồng Tháp</span>
+                    <button class="btn-diary">
+                        <i class='bx bxs-pen'></i> Ghi nhật ký hôm nay
+                    </button>
                 </div>
-                <div class="price-card">
-                    <div class="card-header">
-                        <span style="font-size: 1.5rem;">🍠</span>
-                        <div class="card-title">Khoai Lang</div>
-                    </div>
-                    <div class="price-value">12.000 đ/kg</div>
-                    <div class="price-trend trend-down"><i class='bx bx-trending-down'></i> -1%</div>
-                    <svg class="mini-chart" viewBox="0 0 100 40">
-                        <path d="M0 20 Q 50 30, 100 15" stroke="#f87171" fill="none" />
-                    </svg>
-                    <span class="location-tag">Giá sỉ, Vĩnh Long</span>
-                </div>
-                <div class="price-card">
-                    <div class="card-header">
-                        <span style="font-size: 1.5rem;">🥥</span>
-                        <div class="card-title">Dừa Xiêm</div>
-                    </div>
-                    <div class="price-value">85.000 đ/chục</div>
-                    <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +10%</div>
-                    <svg class="mini-chart" viewBox="0 0 100 40">
-                        <path d="M0 30 Q 50 5, 100 10" stroke="#34d399" fill="none" />
-                    </svg>
-                    <span class="location-tag">Giá sỉ, Bến Tre</span>
-                </div>
-                <div class="price-card">
-                    <div class="card-header">
-                        <span style="font-size: 1.5rem;">🥜</span>
-                        <div class="card-title">Đậu Phộng</div>
-                    </div>
-                    <div class="price-value">40.000 đ/kg</div>
-                    <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +3%</div>
-                    <svg class="mini-chart" viewBox="0 0 100 40">
-                        <path d="M0 25 Q 50 20, 100 15" stroke="#34d399" fill="none" />
-                    </svg>
-                    <span class="location-tag">Giá sỉ, Tây Ninh</span>
-                </div>
-            </div>
 
-            <button class="btn-main">Xem tất cả giá</button>
+                <!-- Pricing Section Integration -->
+                <div class="price-section-wrapper">
+                    <div class="section-title-row">
+                        <div class="section-title">
+                            <span
+                                style="background:rgba(74, 222, 128, 0.1); color:#4ade80; padding:4px; border-radius:50%;"><i
+                                    class='bx bx-dollar'></i></span>
+                            Giá sản vật TPHCM
+                        </div>
+                        <i class='bx bx-search' style="font-size: 1.2rem; color: #888;"></i> <!-- Mini Search -->
+                    </div>
+
+                    <!-- Mini Search Bar (collapsible logic could be added, but keeping visible for utility) -->
+                    <div
+                        style="background:var(--card-bg); padding:8px 12px; border-radius:12px; display:flex; gap:10px; margin-bottom:1rem; align-items:center;">
+                        <input type="text" placeholder="Tìm nhanh..."
+                            style="background:transparent; border:none; outline:none; color:white; width:100%; font-size: 0.9rem;">
+                    </div>
+
+                    <div class="filter-tabs">
+                        <div class="tab active">Tất cả</div>
+                        <div class="tab">Bán buôn</div>
+                    </div>
+
+                    <div class="price-grid">
+                        <div class="price-card" onclick="showProductDetail('coffee')">
+                            <div class="card-header"><span style="font-size: 1.5rem;">☕</span>
+                                <div class="card-title">Cà phê</div>
+                            </div>
+                            <div class="price-value">120k <span style="font-size:0.8rem; font-weight:400;">đ/kg</span>
+                            </div>
+                            <div class="price-trend trend-up"><small>+5%</small></div>
+                        </div>
+                        <div class="price-card">
+                            <div class="card-header"><span style="font-size: 1.5rem;">🌶️</span>
+                                <div class="card-title">Hồ tiêu</div>
+                            </div>
+                            <div class="price-value">95k <span style="font-size:0.8rem; font-weight:400;">đ/kg</span>
+                            </div>
+                            <div class="price-trend trend-down"><small>-2%</small></div>
+                        </div>
+                        <div class="price-card">
+                            <div class="card-header"><span style="font-size: 1.5rem;">🍚</span>
+                                <div class="card-title">Gạo ST25</div>
+                            </div>
+                            <div class="price-value">35k <span style="font-size:0.8rem; font-weight:400;">đ/kg</span>
+                            </div>
+                            <div class="price-trend trend-up"><small>+1%</small></div>
+                        </div>
+                        <div class="price-card">
+                            <div class="card-header"><span style="font-size: 1.5rem;">🍈</span>
+                                <div class="card-title">Sầu riêng</div>
+                            </div>
+                            <div class="price-value">80k <span style="font-size:0.8rem; font-weight:400;">đ/kg</span>
+                            </div>
+                            <div class="price-trend trend-down"><small>-4%</small></div>
+                        </div>
+                    </div>
+                    <button class="btn-secondary" style="width:100%; margin-top:10px; font-size:0.9rem;">Xem tất
+                        cả</button>
+                </div>
+
+            </div> <!-- End Dashboard Container -->
         </section>
 
         <!-- VIEW: Product Detail -->
