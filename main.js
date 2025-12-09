@@ -63,3 +63,31 @@ window.showSettings = function () {
 }
 
 console.log('Mobile App Initialized - Market View Updated');
+
+// Internal Market Tab Logic
+window.switchMarketTab = function (tabName) {
+    const pricesTab = document.getElementById('tab-prices');
+    const newsTab = document.getElementById('tab-news');
+    const btnPrices = document.getElementById('btn-tab-prices');
+    const btnNews = document.getElementById('btn-tab-news');
+
+    if (tabName === 'prices') {
+        pricesTab.style.display = 'block';
+        newsTab.style.display = 'none';
+
+        btnPrices.style.color = '#4ade80';
+        btnPrices.style.borderBottom = '2px solid #4ade80';
+
+        btnNews.style.color = '#888';
+        btnNews.style.borderBottom = 'none';
+    } else {
+        pricesTab.style.display = 'none';
+        newsTab.style.display = 'block';
+
+        btnNews.style.color = '#4ade80';
+        btnNews.style.borderBottom = '2px solid #4ade80';
+
+        btnPrices.style.color = '#888';
+        btnPrices.style.borderBottom = 'none';
+    }
+}

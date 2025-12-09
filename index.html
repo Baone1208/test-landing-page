@@ -310,16 +310,29 @@
 
             <!-- Market Search -->
             <div
-                style="background:var(--card-bg); padding:12px; border-radius:12px; display:flex; gap:10px; margin-bottom:1.5rem; margin-top:1rem; align-items:center;">
+                style="background:var(--card-bg); padding:12px; border-radius:12px; display:flex; gap:10px; margin-bottom:1rem; margin-top:1rem; align-items:center;">
                 <i class='bx bx-search' style="font-size:1.2rem; color:#888;"></i>
                 <input type="text" placeholder="Tìm giá, tin tức..."
                     style="background:transparent; border:none; outline:none; color:white; width:100%; font-size: 1rem;">
             </div>
 
-            <!-- Price Section -->
-            <div style="margin-bottom: 2rem;">
+            <!-- Internal Market Tabs -->
+            <div class="market-tabs"
+                style="display:flex; gap:1rem; margin-bottom:1.5rem; border-bottom:1px solid rgba(255,255,255,0.1);">
+                <div class="market-tab active" id="btn-tab-prices" onclick="switchMarketTab('prices')"
+                    style="padding: 10px 0; cursor:pointer; font-weight:600; color:#4ade80; border-bottom: 2px solid #4ade80;">
+                    Giá cả
+                </div>
+                <div class="market-tab" id="btn-tab-news" onclick="switchMarketTab('news')"
+                    style="padding: 10px 0; cursor:pointer; font-weight:600; color:#888;">
+                    Tin tức
+                </div>
+            </div>
+
+            <!-- Tab Content: Prices -->
+            <div id="tab-prices">
                 <div class="section-title-row">
-                    <h3 style="display:flex; align-items:center; gap:8px;">
+                    <h3 style="display:flex; align-items:center; gap:8px; font-size:1.1rem;">
                         <span style="font-size:1.2rem;">💰</span> Giá nông sản hôm nay
                     </h3>
                     <div class="filter-tabs" style="margin:0; gap:5px;">
@@ -365,10 +378,10 @@
                 </div>
             </div>
 
-            <!-- News Section -->
-            <div>
+            <!-- Tab Content: News (Hidden by default) -->
+            <div id="tab-news" style="display: none;">
                 <div class="section-title-row" style="margin-bottom:1rem;">
-                    <h3 style="display:flex; align-items:center; gap:8px;">
+                    <h3 style="display:flex; align-items:center; gap:8px; font-size:1.1rem;">
                         <span style="font-size:1.2rem;">🗞️</span> Tin tức nổi bật
                     </h3>
                 </div>
