@@ -897,33 +897,7 @@ h3 {
     color: var(--text-muted);
 }
 
-/* Price List Linear */
-.price-item {
-    transition: background 0.2s;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
 
-.price-item:active {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Clean up Farm Card */
-.farm-card {
-    background: #1e201e;
-    /* Reset gradient to flat cleaner dark card */
-    background-image: none;
-    box-shadow: none;
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    /* Green distinctive border */
-}
-
-/* Diary Card update */
-.diary-card {
-    background: #1e201e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
 
 /* Refined Spacing & Cards */
 .content-area {
