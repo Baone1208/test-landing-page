@@ -129,15 +129,20 @@ body {
     background: var(--primary-color);
     color: #111;
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 12px 24px;
+    height: 52px;
+    font-size: 1rem;
     font-weight: 700;
-    border-radius: 50px;
-    margin-top: 2rem;
+    border-radius: 16px;
+    margin-top: 1.5rem;
     width: 100%;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(219, 242, 71, 0.3);
-    transition: transform 0.2s;
+    box-shadow: 0 4px 15px rgba(219, 242, 71, 0.2);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .btn-main:active {
@@ -358,13 +363,13 @@ body {
 }
 
 .big-chart {
-    height: 150px;
+    height: 180px;
     width: 100%;
     background: linear-gradient(180deg, rgba(52, 211, 153, 0.1) 0%, transparent 100%);
-    border-radius: 10px;
+    border-radius: 20px;
     position: relative;
     border-bottom: 2px solid var(--accent-green);
-    margin: 1rem 0;
+    margin: 1.5rem 0;
 }
 
 /* Source List */
@@ -714,8 +719,9 @@ body {
     background: linear-gradient(90deg, #dbf247, #4ade80);
     color: #064e3b;
     width: 100%;
+    height: 52px;
     padding: 12px;
-    border-radius: 50px;
+    border-radius: 16px;
     font-weight: 700;
     border: none;
     display: flex;
@@ -723,6 +729,41 @@ body {
     justify-content: center;
     gap: 8px;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.2);
+    font-size: 1rem;
+}
+
+/* Common Search Bar Style */
+.search-bar {
+    background: var(--card-bg);
+    padding: 0 16px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border 0.2s;
+}
+
+.search-bar:focus-within {
+    border-color: var(--primary-color);
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    font-family: var(--font-main);
+}
+
+.search-bar i {
+    font-size: 1.3rem;
+    color: #888;
 }
 
 /* Integrated Price Section Wrapper */

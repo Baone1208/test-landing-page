@@ -35,7 +35,7 @@
             <header class="app-header">
                 <div class="user-info">
                     <div class="avatar" style="display:flex; justify-content:center; align-items:center;">
-                        <span style="font-size: 1.5rem;">�</span> <!-- Bee for user -->
+                        <span style="font-size: 1.5rem;"></span> <!-- Bee for user -->
                     </div>
                     <div>
                         <div class="greeting">Chào buổi sáng,</div>
@@ -46,6 +46,13 @@
                     <i class='bx bx-bell'></i>
                 </div>
             </header>
+
+            <!-- Search Bar Added to Home -->
+            <div class="search-bar">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Tìm kiếm nông sản...">
+                <i class='bx bx-scan'></i>
+            </div>
 
             <div class="dashboard-container">
                 <!-- Farm Info Card -->
@@ -86,7 +93,7 @@
                                 <div class="temp-text">30°C</div>
                                 <div style="font-size:0.9rem;">Nắng nhẹ</div>
                             </div>
-                            <span style="font-size: 2rem;">�️</span>
+                            <span style="font-size: 2rem;">🌤️</span>
                         </div>
                         <div class="weather-details">
                             <div class="weather-detail-row"><span>Gió:</span> <span>12km/h</span></div>
@@ -134,11 +141,9 @@
                         <i class='bx bx-search' style="font-size: 1.2rem; color: #888;"></i> <!-- Mini Search -->
                     </div>
 
-                    <!-- Mini Search Bar (collapsible logic could be added, but keeping visible for utility) -->
-                    <div
-                        style="background:var(--card-bg); padding:8px 12px; border-radius:12px; display:flex; gap:10px; margin-bottom:1rem; align-items:center;">
-                        <input type="text" placeholder="Tìm nhanh..."
-                            style="background:transparent; border:none; outline:none; color:white; width:100%; font-size: 0.9rem;">
+                    <!-- Mini Search Bar -->
+                    <div class="search-bar" style="height: 44px; margin-bottom: 1rem;">
+                        <input type="text" placeholder="Tìm nhanh...">
                     </div>
 
                     <div class="filter-tabs">
@@ -309,11 +314,9 @@
             </header>
 
             <!-- Market Search -->
-            <div
-                style="background:var(--card-bg); padding:12px; border-radius:12px; display:flex; gap:10px; margin-bottom:1rem; margin-top:1rem; align-items:center;">
-                <i class='bx bx-search' style="font-size:1.2rem; color:#888;"></i>
-                <input type="text" placeholder="Tìm giá, tin tức..."
-                    style="background:transparent; border:none; outline:none; color:white; width:100%; font-size: 1rem;">
+            <div class="search-bar">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Tìm giá cả, tin tức...">
             </div>
 
             <!-- Internal Market Tabs -->
