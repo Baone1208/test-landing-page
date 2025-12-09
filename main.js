@@ -2,7 +2,7 @@ const views = {
     landing: document.getElementById('landing-view'),
     app: document.getElementById('app-view'),
     detail: document.getElementById('detail-view'),
-    news: document.getElementById('news-view'),
+    market: document.getElementById('market-view'),
     alerts: document.getElementById('alerts-view')
 };
 const bottomNav = document.getElementById('main-nav');
@@ -17,7 +17,7 @@ document.getElementById('exploreBtn').addEventListener('click', () => {
 // Tab Switching Logic
 window.switchTab = function (targetId, navEl) {
     // Hide all main tabs
-    ['app-view', 'news-view', 'alerts-view'].forEach(id => {
+    ['app-view', 'market-view', 'alerts-view'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.remove('active');
     });
@@ -62,4 +62,4 @@ window.showSettings = function () {
     document.querySelector('.bottom-nav .nav-item:nth-child(4)').classList.add('active');
 }
 
-console.log('Mobile App Initialized - Updated Nav');
+console.log('Mobile App Initialized - Market View Updated');

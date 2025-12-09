@@ -302,37 +302,106 @@
             <button class="btn-main" style="margin-top: 2rem;" onclick="showSettings()">Đặt cảnh báo giá</button>
         </section>
 
-        <!-- VIEW: News (Replaced Search) -->
-        <section id="news-view" class="view-section content-area">
-            <h2 style="margin-bottom:1.5rem;">Tin tức nông nghiệp</h2>
+        <!-- VIEW: Market (Combined Prices & News) -->
+        <section id="market-view" class="view-section content-area">
+            <header class="app-header" style="margin-bottom: 0px;">
+                <div class="section-title" style="font-size: 1.5rem;">Thị trường</div>
+            </header>
 
-            <div class="source-list">
-                <div class="source-item">
-                    <span style="font-size: 2rem;">📰</span>
-                    <div>
-                        <div style="font-weight:600;">Giá sầu riêng lập đỉnh mới tại Tiền Giang</div>
-                        <div style="font-size:0.8rem; color:#888;">Nông nghiệp Việt Nam • 2 giờ trước</div>
+            <!-- Market Search -->
+            <div
+                style="background:var(--card-bg); padding:12px; border-radius:12px; display:flex; gap:10px; margin-bottom:1.5rem; margin-top:1rem; align-items:center;">
+                <i class='bx bx-search' style="font-size:1.2rem; color:#888;"></i>
+                <input type="text" placeholder="Tìm giá, tin tức..."
+                    style="background:transparent; border:none; outline:none; color:white; width:100%; font-size: 1rem;">
+            </div>
+
+            <!-- Price Section -->
+            <div style="margin-bottom: 2rem;">
+                <div class="section-title-row">
+                    <h3 style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:1.2rem;">💰</span> Giá nông sản hôm nay
+                    </h3>
+                    <div class="filter-tabs" style="margin:0; gap:5px;">
+                        <div class="tab active" style="padding:4px 12px; font-size:0.8rem;">Tất cả</div>
+                        <div class="tab" style="padding:4px 12px; font-size:0.8rem;">Yêu thích</div>
                     </div>
                 </div>
-                <div class="source-item">
-                    <span style="font-size: 2rem;">⛈️</span>
-                    <div>
-                        <div style="font-weight:600;">Dự báo: Mưa lớn ảnh hưởng thu hoạch hồ tiêu</div>
-                        <div style="font-size:0.8rem; color:#888;">Thời tiết 24h • 4 giờ trước</div>
+
+                <div class="price-grid">
+                    <!-- Coffee Card -->
+                    <div class="price-card" onclick="showProductDetail('coffee')">
+                        <div class="card-header"><span style="font-size: 1.5rem;">☕</span>
+                            <div class="card-title">Cà phê</div>
+                        </div>
+                        <div class="price-value">120.000 <span style="font-size:0.8rem;">đ/kg</span></div>
+                        <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +5%</div>
+                        <svg class="mini-chart" viewBox="0 0 100 40">
+                            <path d="M0 30 Q 20 10, 40 25 T 100 5" stroke="#34d399" fill="none" />
+                        </svg>
+                    </div>
+                    <!-- Pepper Card -->
+                    <div class="price-card">
+                        <div class="card-header"><span style="font-size: 1.5rem;">🌶️</span>
+                            <div class="card-title">Hồ tiêu</div>
+                        </div>
+                        <div class="price-value">95.000 <span style="font-size:0.8rem;">đ/kg</span></div>
+                        <div class="price-trend trend-down"><i class='bx bx-trending-down'></i> -2%</div>
+                        <svg class="mini-chart" viewBox="0 0 100 40">
+                            <path d="M0 10 Q 30 5, 60 25 T 100 35" stroke="#f87171" fill="none" />
+                        </svg>
+                    </div>
+                    <!-- Rice Card -->
+                    <div class="price-card">
+                        <div class="card-header"><span style="font-size: 1.5rem;">🍚</span>
+                            <div class="card-title">Gạo ST25</div>
+                        </div>
+                        <div class="price-value">35.000 <span style="font-size:0.8rem;">đ/kg</span></div>
+                        <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +1%</div>
+                        <svg class="mini-chart" viewBox="0 0 100 40">
+                            <path d="M0 35 Q 20 30, 40 20 T 100 15" stroke="#34d399" fill="none" />
+                        </svg>
                     </div>
                 </div>
-                <div class="source-item">
-                    <span style="font-size: 2rem;">🚀</span>
-                    <div>
-                        <div style="font-weight:600;">Xuất khẩu gạo Việt Nam vượt mốc 5 tỷ USD</div>
-                        <div style="font-size:0.8rem; color:#888;">Kinh tế Tài chính • 1 ngày trước</div>
-                    </div>
+            </div>
+
+            <!-- News Section -->
+            <div>
+                <div class="section-title-row" style="margin-bottom:1rem;">
+                    <h3 style="display:flex; align-items:center; gap:8px;">
+                        <span style="font-size:1.2rem;">🗞️</span> Tin tức nổi bật
+                    </h3>
                 </div>
-                <div class="source-item">
-                    <span style="font-size: 2rem;">💡</span>
-                    <div>
-                        <div style="font-weight:600;">Công nghệ AI giúp phát hiện sâu bệnh sớm</div>
-                        <div style="font-size:0.8rem; color:#888;">Khoa học & Đời sống • 2 ngày trước</div>
+
+                <div class="source-list">
+                    <div class="source-item">
+                        <span style="font-size: 2rem;">📰</span>
+                        <div>
+                            <div style="font-weight:600;">Giá sầu riêng lập đỉnh mới tại Tiền Giang nhưng rủi ro cao
+                            </div>
+                            <div style="font-size:0.8rem; color:#888;">Nông nghiệp Việt Nam • 2 giờ trước</div>
+                        </div>
+                    </div>
+                    <div class="source-item">
+                        <span style="font-size: 2rem;">⛈️</span>
+                        <div>
+                            <div style="font-weight:600;">Dự báo: Mưa lớn diện rộng ảnh hưởng thu hoạch hồ tiêu</div>
+                            <div style="font-size:0.8rem; color:#888;">Thời tiết 24h • 4 giờ trước</div>
+                        </div>
+                    </div>
+                    <div class="source-item">
+                        <span style="font-size: 2rem;">🚀</span>
+                        <div>
+                            <div style="font-weight:600;">Xuất khẩu gạo Việt Nam vượt mốc 5 tỷ USD, kỷ lục mới</div>
+                            <div style="font-size:0.8rem; color:#888;">Kinh tế Tài chính • 1 ngày trước</div>
+                        </div>
+                    </div>
+                    <div class="source-item">
+                        <span style="font-size: 2rem;">💡</span>
+                        <div>
+                            <div style="font-weight:600;">Công nghệ AI của Đom Đóm giúp phát hiện sâu bệnh sớm</div>
+                            <div style="font-size:0.8rem; color:#888;">Khoa học & Đời sống • 2 ngày trước</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -376,9 +445,9 @@
                 <i class='bx bx-home-alt'></i>
                 <span>Trang chủ</span>
             </div>
-            <div class="nav-item" onclick="switchTab('news-view', this)">
-                <i class='bx bx-news'></i>
-                <span>Tin tức</span>
+            <div class="nav-item" onclick="switchTab('market-view', this)">
+                <i class='bx bx-line-chart'></i>
+                <span>Thị trường</span>
             </div>
             <div class="nav-item">
                 <i class='bx bx-brain'></i>
