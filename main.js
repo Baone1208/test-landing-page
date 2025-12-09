@@ -75,19 +75,13 @@ window.switchMarketTab = function (tabName) {
         pricesTab.style.display = 'block';
         newsTab.style.display = 'none';
 
-        btnPrices.style.color = '#4ade80';
-        btnPrices.style.borderBottom = '2px solid #4ade80';
-
-        btnNews.style.color = '#888';
-        btnNews.style.borderBottom = 'none';
+        btnPrices.classList.add('active');
+        btnNews.classList.remove('active');
     } else {
         pricesTab.style.display = 'none';
         newsTab.style.display = 'block';
 
-        btnNews.style.color = '#4ade80';
-        btnNews.style.borderBottom = '2px solid #4ade80';
-
-        btnPrices.style.color = '#888';
-        btnPrices.style.borderBottom = 'none';
+        btnNews.classList.add('active');
+        btnPrices.classList.remove('active');
     }
 }
