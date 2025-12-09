@@ -924,3 +924,161 @@ h3 {
     background: #1e201e;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Refined Spacing & Cards */
+.content-area {
+    padding: 24px;
+    /* Increased from 20px for breathing room */
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* Consistent wider gap between sections */
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Farm Card - Subtle differentiation */
+.farm-card {
+    background: linear-gradient(180deg, rgba(30, 32, 30, 1) 0%, rgba(20, 50, 30, 0.2) 100%);
+    border: 1px solid rgba(74, 222, 128, 0.15);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather Card */
+.weather-card {
+    background: var(--card-bg);
+    border: var(--card-border);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Chips & Tags */
+.status-chip {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Price List - 3 Columns Alignment */
+.price-list-linear {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.price-item {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 0.8fr;
+    /* Name - Price - Change */
+    align-items: center;
+    padding: 16px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.2s ease;
+}
+
+.price-item:active {
+    transform: scale(0.99);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Bottom Nav - Icons + Labels */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    /* Taller for labels */
+    padding-bottom: 20px;
+    /* Safe area for swipe bar */
+    background: rgba(18, 20, 19, 0.98);
+    /* Solid dark */
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-item.active {
+    color: var(--primary-green);
+}
+
+.nav-item i {
+    font-size: 22px;
+    /* Consistent Line Icon Size */
+    margin-bottom: 2px;
+    color: inherit;
+}
+
+.nav-item.active i {
+    color: var(--primary-green);
+}
+
+/* Alert Settings Controls */
+.stepper-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    border: none;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.stepper-input {
+    height: 56px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 16px;
+}
+
+/* Source List Card (Detail View) */
+.source-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 0;
+    /* List items will provide padding */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.source-item {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.source-item:last-child {
+    border-bottom: none;
+}
