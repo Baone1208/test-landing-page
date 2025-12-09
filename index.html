@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Đom Đóm AI - Mobile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Using boxicons for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div id="mobile-wrapper">
+        <div class="glow-spot glow-top-right"></div>
+        <div class="glow-spot glow-bottom-left"></div>
+
+        <!-- VIEW: Landing Page -->
+        <section id="landing-view">
+            <div class="anim-logo">
+                <img src="https://api.iconify.design/fluent-emoji/firefly.svg" alt="Firefly"
+                    style="width: 60%; height: 60%; position: absolute; top: 20%; left: 20%;">
+            </div>
+            <h1>Thắp Sáng <br><span class="highlight">Nông Nghiệp Số</span></h1>
+            <p style="color: #889; margin-bottom: 20px;">Cập nhật giá cả nông sản nhanh chóng, chính xác và thông minh
+                cùng Đom Đóm AI.</p>
+            <button class="btn-main" id="exploreBtn">Khám Phá Ngay</button>
+        </section>
+
+        <!-- VIEW: Main App (Dashboard) -->
+        <section id="app-view" class="view-section content-area">
+            <header class="app-header">
+                <div class="user-info">
+                    <div class="avatar">
+                        <img src="https://api.iconify.design/fluent-emoji/honeybee.svg" alt="User">
+                    </div>
+                    <div>
+                        <div class="greeting">Chào buổi sáng,</div>
+                        <div class="username">Bác Huy!</div>
+                    </div>
+                </div>
+                <div class="status-icons">
+                    <i class='bx bx-bell'></i>
+                </div>
+            </header>
+
+            <div class="filter-tabs">
+                <div class="tab active">Bắc</div>
+                <div class="tab">Trung</div>
+                <div class="tab">Nam</div>
+                <div class="tab">Bán buôn</div>
+            </div>
+
+            <div class="price-grid">
+                <!-- Coffee Card -->
+                <div class="price-card" onclick="showProductDetail('coffee')">
+                    <div class="card-header">
+                        <span style="font-size: 1.5rem;">☕</span>
+                        <div class="card-title">Cà phê</div>
+                    </div>
+                    <div class="price-value">120.000 đ/kg</div>
+                    <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +5%</div>
+                    <svg class="mini-chart" viewBox="0 0 100 40">
+                        <path d="M0 30 Q 20 10, 40 25 T 100 5" stroke="#34d399" fill="none" />
+                    </svg>
+                    <span class="location-tag">Giá sỉ, TPHCM</span>
+                </div>
+
+                <!-- Pepper Card -->
+                <div class="price-card">
+                    <div class="card-header">
+                        <span style="font-size: 1.5rem;">🌶️</span>
+                        <div class="card-title">Hồ tiêu</div>
+                    </div>
+                    <div class="price-value">95.000 đ/kg</div>
+                    <div class="price-trend trend-down"><i class='bx bx-trending-down'></i> -2%</div>
+                    <svg class="mini-chart" viewBox="0 0 100 40">
+                        <path d="M0 10 Q 30 5, 60 25 T 100 35" stroke="#f87171" fill="none" />
+                    </svg>
+                    <span class="location-tag">Giá sỉ, Đắk Lắk</span>
+                </div>
+
+                <!-- Rice Card -->
+                <div class="price-card">
+                    <div class="card-header">
+                        <span style="font-size: 1.5rem;">🍚</span>
+                        <div class="card-title">Gạo ST25</div>
+                    </div>
+                    <div class="price-value">35.000 đ/kg</div>
+                    <div class="price-trend trend-up"><i class='bx bx-trending-up'></i> +1%</div>
+                    <svg class="mini-chart" viewBox="0 0 100 40">
+                        <path d="M0 35 Q 20 30, 40 20 T 100 15" stroke="#34d399" fill="none" />
+                    </svg>
+                    <span class="location-tag">Giá sỉ, Sóc Trăng</span>
+                </div>
+
+                <!-- Durian Card -->
+                <div class="price-card">
+                    <div class="card-header">
+                        <span style="font-size: 1.5rem;">🍈</span>
+                        <div class="card-title">Sầu riêng</div>
+                    </div>
+                    <div class="price-value">80.000 đ/kg</div>
+                    <div class="price-trend trend-down"><i class='bx bx-trending-down'></i> -4%</div>
+                    <svg class="mini-chart" viewBox="0 0 100 40">
+                        <path d="M0 10 Q 40 10, 70 30 T 100 38" stroke="#f87171" fill="none" />
+                    </svg>
+                    <span class="location-tag">Giá sỉ, Tiền Giang</span>
+                </div>
+            </div>
+
+            <button class="btn-main">Xem tất cả giá</button>
+        </section>
+
+        <!-- VIEW: Product Detail -->
+        <section id="detail-view" class="view-section content-area">
+            <div class="back-nav" onclick="goBackToHome()">
+                <i class='bx bx-arrow-back'></i>
+                <span>Quay lại</span>
+            </div>
+
+            <div class="detail-header">
+                <div class="card-header" style="margin-bottom: 1rem;">
+                    <span style="font-size: 2rem;">☕</span>
+                    <h2 class="card-title" style="font-size: 1.4rem;">Cà phê (Robusta)</h2>
+                </div>
+
+                <div class="chart-controls">
+                    <div class="chart-btn">24H</div>
+                    <div class="chart-btn active">7D</div>
+                    <div class="chart-btn">30D</div>
+                </div>
+
+                <div class="big-chart">
+                    <!-- Fake chart line -->
+                    <svg viewBox="0 0 300 100" style="width:100%; height:100%; position:absolute; bottom:0;">
+                        <path d="M0 80 C 50 80, 50 30, 100 50 S 150 20, 200 40 S 250 10, 300 15" stroke="#dbf247"
+                            stroke-width="3" fill="none" />
+                        <text x="5" y="90" fill="#666" font-size="10">Min: 118k</text>
+                        <text x="250" y="20" fill="#666" font-size="10">Max: 121k</text>
+                    </svg>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                    <div>
+                        <div style="font-size: 2rem; font-weight: 700;">120.000 <span
+                                style="font-size:1rem;">đ/kg</span></div>
+                        <div style="color: var(--accent-green);">+5% <i class='bx bx-trending-up'></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                <h3>Nguồn giá</h3>
+                <i class='bx bx-toggle-right' style="font-size: 2rem; color: var(--accent-green);"></i>
+            </div>
+
+            <div class="source-list">
+                <div class="source-item">
+                    <i class='bx bx-store source-icon'></i>
+                    <div>
+                        <div style="font-weight:600;">Chợ đầu mối nông sản TPHCM</div>
+                        <div style="font-size:0.8rem; color:#888;">Cập nhật: 30p trước</div>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <i class='bx bx-building-house source-icon'></i>
+                    <div>
+                        <div style="font-weight:600;">Công ty Cà phê Việt</div>
+                        <div style="font-size:0.8rem; color:#888;">Cập nhật: 1h trước</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-main" style="margin-top: 2rem;" onclick="showSettings()">Đặt cảnh báo giá</button>
+        </section>
+
+        <!-- VIEW: Search/Categories -->
+        <section id="search-view" class="view-section content-area">
+            <div
+                style="background:var(--card-bg); padding:10px; border-radius:12px; display:flex; gap:10px; margin-bottom:1.5rem;">
+                <i class='bx bx-search' style="font-size:1.2rem; color:#888;"></i>
+                <input type="text" placeholder="Tìm kiếm nông sản..."
+                    style="background:transparent; border:none; outline:none; color:white; width:100%;">
+            </div>
+
+            <div class="filter-tabs">
+                <div class="tab active">Tất cả</div>
+                <div class="tab">Trái cây</div>
+                <div class="tab">Lương thực</div>
+            </div>
+
+            <div class="category-grid">
+                <div class="cat-card">
+                    <img src="https://api.iconify.design/fluent-emoji/sheaf-of-rice.svg" class="cat-img">
+                    <h3>Lương thực</h3>
+                    <p style="font-size:0.8rem; color:#888;">Gạo, Ngô, Khoai</p>
+                </div>
+                <div class="cat-card">
+                    <img src="https://api.iconify.design/fluent-emoji/mango.svg" class="cat-img">
+                    <h3>Trái cây</h3>
+                    <p style="font-size:0.8rem; color:#888;">Sầu riêng, Măng cụt</p>
+                </div>
+                <div class="cat-card">
+                    <img src="https://api.iconify.design/fluent-emoji/fish.svg" class="cat-img">
+                    <h3>Thủy sản</h3>
+                    <p style="font-size:0.8rem; color:#888;">Tôm, Cá tra</p>
+                </div>
+                <div class="cat-card">
+                    <img src="https://api.iconify.design/fluent-emoji/hot-pepper.svg" class="cat-img">
+                    <h3>Gia vị</h3>
+                    <p style="font-size:0.8rem; color:#888;">Tiêu, Tỏi, Ớt</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW: Settings / Alerts -->
+        <section id="alerts-view" class="view-section content-area">
+            <h2 style="margin-bottom:1.5rem;">Cài đặt cảnh báo</h2>
+
+            <div class="alert-setting">
+                <div class="card-header">
+                    <span style="font-size: 1.5rem;">☕</span>
+                    <div class="card-title">Cà phê (Robusta)</div>
+                </div>
+                <p style="color:#888;">Giá hiện tại: 120.000 đ/kg</p>
+
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slider-fill"></div>
+                        <div class="slider-thumb"></div>
+                    </div>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                    <span>Giá mục tiêu:</span>
+                    <span style="font-weight:700; color:var(--primary-color);">125.000 đ/kg</span>
+                </div>
+
+                <div style="display:flex; gap:10px; align-items:center; margin-bottom:1.5rem;">
+                    <i class='bx bx-checkbox-checked' style="font-size:1.5rem; color:var(--primary-color);"></i>
+                    <span>Thông báo khi giá vượt ngưỡng</span>
+                </div>
+
+                <button class="btn-main">Ghi nhận cảnh báo</button>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav" id="main-nav" style="display: none;">
+            <div class="nav-item active" onclick="switchTab('app-view', this)">
+                <i class='bx bx-home-alt'></i>
+                <span>Trang chủ</span>
+            </div>
+            <div class="nav-item" onclick="switchTab('search-view', this)">
+                <i class='bx bx-search'></i>
+                <span>Tìm kiếm</span>
+            </div>
+            <div class="nav-item">
+                <i class='bx bx-brain'></i> <!-- AI Icon -->
+                <span>Đom Đóm</span>
+            </div>
+            <div class="nav-item" onclick="switchTab('alerts-view', this)">
+                <i class='bx bx-bell'></i>
+                <span>Thông báo</span>
+            </div>
+            <div class="nav-item">
+                <i class='bx bx-user'></i>
+                <span>Hồ sơ</span>
+            </div>
+        </nav>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
