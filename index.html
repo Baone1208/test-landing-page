@@ -47,6 +47,15 @@
                 </div>
             </header>
 
+            <!-- Search Bar Added to Home -->
+            <div
+                style="background:var(--card-bg); padding:12px; border-radius:12px; display:flex; gap:10px; margin-bottom:1.5rem; align-items:center;">
+                <i class='bx bx-search' style="font-size:1.2rem; color:#888;"></i>
+                <input type="text" placeholder="Tìm kiếm nông sản..."
+                    style="background:transparent; border:none; outline:none; color:white; width:100%; font-size: 1rem;">
+                <i class='bx bx-scan' style="font-size:1.2rem; color:#888;"></i>
+            </div>
+
             <div class="filter-tabs">
                 <div class="tab active">Bắc</div>
                 <div class="tab">Trung</div>
@@ -159,8 +168,9 @@
                     </svg>
                     <span class="location-tag">Giá sỉ, Tây Ninh</span>
                 </div>
+            </div>
 
-                <button class="btn-main">Xem tất cả giá</button>
+            <button class="btn-main">Xem tất cả giá</button>
         </section>
 
         <!-- VIEW: Product Detail -->
@@ -247,61 +257,38 @@
             <button class="btn-main" style="margin-top: 2rem;" onclick="showSettings()">Đặt cảnh báo giá</button>
         </section>
 
-        <!-- VIEW: Search/Categories -->
-        <section id="search-view" class="view-section content-area">
-            <div
-                style="background:var(--card-bg); padding:10px; border-radius:12px; display:flex; gap:10px; margin-bottom:1.5rem;">
-                <i class='bx bx-search' style="font-size:1.2rem; color:#888;"></i>
-                <input type="text" placeholder="Tìm kiếm nông sản..."
-                    style="background:transparent; border:none; outline:none; color:white; width:100%;">
-            </div>
+        <!-- VIEW: News (Replaced Search) -->
+        <section id="news-view" class="view-section content-area">
+            <h2 style="margin-bottom:1.5rem;">Tin tức nông nghiệp</h2>
 
-            <div class="filter-tabs">
-                <div class="tab active">Tất cả</div>
-                <div class="tab">Trái cây</div>
-                <div class="tab">Lương thực</div>
-            </div>
-
-            <div class="category-grid">
-                <div class="cat-card">
-                    <span class="cat-img" style="font-size: 3rem; display:block;">🌾</span>
-                    <h3>Lương thực</h3>
-                    <p style="font-size:0.8rem; color:#888;">Gạo, Ngô, Khoai</p>
+            <div class="source-list">
+                <div class="source-item">
+                    <span style="font-size: 2rem;">📰</span>
+                    <div>
+                        <div style="font-weight:600;">Giá sầu riêng lập đỉnh mới tại Tiền Giang</div>
+                        <div style="font-size:0.8rem; color:#888;">Nông nghiệp Việt Nam • 2 giờ trước</div>
+                    </div>
                 </div>
-                <div class="cat-card">
-                    <span class="cat-img" style="font-size: 3rem; display:block;">🥭</span>
-                    <h3>Trái cây</h3>
-                    <p style="font-size:0.8rem; color:#888;">Sầu riêng, Măng cụt</p>
+                <div class="source-item">
+                    <span style="font-size: 2rem;">⛈️</span>
+                    <div>
+                        <div style="font-weight:600;">Dự báo: Mưa lớn ảnh hưởng thu hoạch hồ tiêu</div>
+                        <div style="font-size:0.8rem; color:#888;">Thời tiết 24h • 4 giờ trước</div>
+                    </div>
                 </div>
-                <div class="cat-card">
-                    <span class="cat-img" style="font-size: 3rem; display:block;">🐟</span>
-                    <h3>Thủy sản</h3>
-                    <p style="font-size:0.8rem; color:#888;">Tôm, Cá tra</p>
+                <div class="source-item">
+                    <span style="font-size: 2rem;">🚀</span>
+                    <div>
+                        <div style="font-weight:600;">Xuất khẩu gạo Việt Nam vượt mốc 5 tỷ USD</div>
+                        <div style="font-size:0.8rem; color:#888;">Kinh tế Tài chính • 1 ngày trước</div>
+                    </div>
                 </div>
-                <div class="cat-card">
-                    <span class="cat-img" style="font-size: 3rem; display:block;">🌶️</span>
-                    <h3>Gia vị</h3>
-                    <p style="font-size:0.8rem; color:#888;">Tiêu, Tỏi, Ớt</p>
-                </div>
-                <div class="cat-card">
-                    <span class="cat-img" style="font-size: 3rem; display:block;">🥦</span>
-                    <h3>Rau củ</h3>
-                    <p style="font-size:0.8rem; color:#888;">Bắp cải, Su hào</p>
-                </div>
-                <div class="cat-card">
-                    <span class="cat-img" style="font-size: 3rem; display:block;">🍄</span>
-                    <h3>Nấm</h3>
-                    <p style="font-size:0.8rem; color:#888;">Nấm rơm, Nấm mối</p>
-                </div>
-                <div class="cat-card">
-                    <span class="cat-img" style="font-size: 3rem; display:block;">🪵</span>
-                    <h3>Lâm sản</h3>
-                    <p style="font-size:0.8rem; color:#888;">Gỗ, Tre, Nứa</p>
-                </div>
-                <div class="cat-card">
-                    <span class="cat-img" style="font-size: 3rem; display:block;">🐄</span>
-                    <h3>Chăn nuôi</h3>
-                    <p style="font-size:0.8rem; color:#888;">Heo, Bò, Gà</p>
+                <div class="source-item">
+                    <span style="font-size: 2rem;">💡</span>
+                    <div>
+                        <div style="font-weight:600;">Công nghệ AI giúp phát hiện sâu bệnh sớm</div>
+                        <div style="font-size:0.8rem; color:#888;">Khoa học & Đời sống • 2 ngày trước</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -344,13 +331,13 @@
                 <i class='bx bx-home-alt'></i>
                 <span>Trang chủ</span>
             </div>
-            <div class="nav-item" onclick="switchTab('search-view', this)">
-                <i class='bx bx-search'></i>
-                <span>Tìm kiếm</span>
+            <div class="nav-item" onclick="switchTab('news-view', this)">
+                <i class='bx bx-news'></i>
+                <span>Tin tức</span>
             </div>
             <div class="nav-item">
-                <i class='bx bx-brain'></i> <!-- AI Icon -->
-                <span>Đom Đóm</span>
+                <i class='bx bx-brain'></i>
+                <span>Đom Đóm AI</span>
             </div>
             <div class="nav-item" onclick="switchTab('alerts-view', this)">
                 <i class='bx bx-bell'></i>
