@@ -265,7 +265,7 @@ body {
 
 .icon-box {
     width: 32px;
-    32px;
+    height: 32px;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -395,13 +395,14 @@ body {
     left: 0;
     width: 100%;
     height: var(--nav-height);
-    background: rgba(28, 35, 33, 0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(28, 35, 33, 0.95);
+    backdrop-filter: blur(20px);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 100;
-    border-t: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 999;
+    border-t: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-item {
