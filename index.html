@@ -62,7 +62,7 @@
                 <div class="farm-card">
                     <div class="farm-header" style="justify-content: space-between;">
                         <h2 style="margin:0; color:#fff;">Vườn Cà Phê</h2>
-                        <button
+                        <button onclick="showSoilDetail()"
                             style="background:rgba(255,255,255,0.1); border:none; color:#fff; padding:6px 12px; border-radius:20px; font-size:12px;">Chi
                             tiết đất</button>
                     </div>
@@ -159,7 +159,9 @@
 
                     </div>
 
-                    <button class="btn-secondary" style="margin-top:16px;">Xem tất cả</button>
+                    <button class="btn-secondary" style="margin-top:16px;"
+                        onclick="switchTab('market-view', document.querySelectorAll('.nav-item')[1])">Xem tất
+                        cả</button>
                 </div>
 
             </div>

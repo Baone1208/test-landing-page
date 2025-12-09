@@ -36,16 +36,23 @@ window.switchTab = function (targetId, navEl) {
 // Navigation to Product Detail
 window.showProductDetail = function (productId) {
     // Hide current view
-    document.querySelector('.view-section.active').classList.remove('active');
+    const activeView = document.querySelector('.view-section.active');
+    if (activeView) activeView.classList.remove('active');
 
     // Show detail
-    views.detail.classList.add('active');
+    if (views.detail) views.detail.classList.add('active');
+}
+
+window.showSoilDetail = function () {
+    alert('Tính năng chi tiết đất đang được phát triển!');
 }
 
 // Back to Home
 window.goBackToHome = function () {
-    views.detail.classList.remove('active');
-    views.app.classList.add('active');
+    if (views.detail) views.detail.classList.remove('active');
+    if (views.alerts) views.alerts.classList.remove('active');
+
+    if (views.app) views.app.classList.add('active');
 
     // Reset nav to Home
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
@@ -54,12 +61,16 @@ window.goBackToHome = function () {
 
 window.showSettings = function () {
     // Navigate to alerts view
-    views.detail.classList.remove('active');
-    views.alerts.classList.add('active');
+    const activeView = document.querySelector('.view-section.active');
+    if (activeView) activeView.classList.remove('active');
+
+    if (views.alerts) views.alerts.classList.add('active');
 
     // Highlight Notification Tab (4th item)
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-    document.querySelector('.bottom-nav .nav-item:nth-child(4)').classList.add('active');
+    // Note: nth-child is 1-based. Notification is 4th.
+    const notifNav = document.querySelector('.bottom-nav .nav-item:nth-child(4)');
+    if (notifNav) notifNav.classList.add('active');
 }
 
 console.log('Mobile App Initialized - Market View Updated');
